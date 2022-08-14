@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- MEta Data -->
+  <!-- <meta name="description" content="Secret Conversation - A tool that will convert messages from pain text to encrypted text."> -->
+  <meta name="keywords" content="Steganography, Secret Writing, Cryptography, Cypher, Secret code, Hide message or text into an Image, Embed, Decode">
+  <meta name="author" content="James Paul Espeña">
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/IMG/Jeng.gif">
+
+  <link rel="stylesheet" href="/CSS/bulma.min.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+  <link rel="stylesheet" href="/CSS/sweetalert2.min.css">
+  <link rel="stylesheet" href="/CSS/overide.css">
+  <script src="/JS/steganography.min.js"></script>
+
+  <title>Welcome To My Online Steganography Tool</title>
+</head>
+
+<body>
+
+
+  <!-- Tab / header  -->
+  <div class="hero-foot mt-4">
+    <nav class="tabs is-boxed is-fullwidth is-medium is-centered">
+      <div class="container">
+        <ul>
+          <li class="tab is-active" onclick="openTab(event,'Embed')"><a><i class="fas fa-binary-lock "
+                aria-hidden="true"></i> Embed</a></li>
+          <li class="tab" onclick="openTab(event,'Decode')"><a><i class="fas fa-image-slash "
+                aria-hidden="true"></i> Decode</a></li>
+          <!-- <li class="tab" onclick="openTab(event,'dev_info')"><a><i class="fa-brands fa-github " aria-hidden="true"></i> Dev. Info.</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+  <!-- content for each tab -->
+
+  <div class="container section">
+    <!--Start of main DIV -->
+    <div id="Embed" class="content-tab">
+      <!-- First tab -->
+      <!-- content for Embed -->
+
+
+      <p class="is-size-6" id="txt_instruction">Step 1. Upload an Image.</p>
+      <div id="file-js-upload" class="file has-name is-info mt-1">
+        <!-- Button for file upload-->
+        <label class="file-label">
+          <input class="file-input" type="file" name="pic" accept="image/*" onchange="readURL(this);" id="file-input" />
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload is-size-5 fa-bounce"></i>
+            </span>
+            <span class="file-label" id="file-label">
+               Upload Image
+            </span>
+          </span>
+          <span class="file-name">
+            No file uploaded
+          </span>
+        </label>
+      </div> <!-- End of utton for file upload-->
+
+      <p class="is-size-6 mt-2" id="txt_instruction"> No Available Image ?</p>
+      <button class="button is-info mt-1" id="freeimage" title="Free HD Image provided by UNSPLASH.">
+        <!-- Button for free image-->
+        <!--Button for image download-->
+        Download <i class="fas fa-high-definition is-size-5 "></i> Image for Free  
+        <span class="file-icon">
+          <i class="fas fa-arrow-down-to-bracket is-size-5"></i>
+        </span>
+      </button>
+      <p class="is-size-6 mt-2" id="txt_instruction">Step 2. Enter or Type the message you want to embed or hide.</p>
+      <p class="is-size-6" id="txt_instruction">Step 3. Saved the coded image then distribute.</p>      
+      <!--End of Button for image download-->
+
+
+
+      <div id="container_for_embed">
+        <!--Container for embed to display after upload-->
+
+        <div class="mt-5">
+          <!--This is the container for both images-->
+          <div class="row">
+            <div class="column">
+              <p id="imgtxt">Original Image</p>
+              <img src="https://bulma.io/images/placeholders/256x256.png" style="width:80%;" id="img_1" />
+            </div>
+          </div>
+
+       
+          <div class="row">
+            <div class="column ml-5">
+              <br id="linebreak_resize">              
+              <p class="imgwithcodetxt" id="imgtxt_result">Image with Code</p>
+              <img src="https://bulma.io/images/placeholders/256x256.png" style="width:80%;" id="img_2" />
+            </div>
+          </div>
+        </div>
+        <!--End of container for both images-->
+
+
+
+
+        <!--Text Area-->
+        <div class="control">
+          <br>
+          <textarea class="textarea has-fixed-size mt-3" placeholder=" Enter Text or Message Here ..." spellcheck="false"
+            id="txtarea"></textarea>
+
+
+
+          <!--Button for Convert-->
+          <button class="button is-success mt-2" id="convert">
+            <span class="file-icon">
+              <i class="fas fa-object-intersect is-size-5 fa-beat"></i></i>
+            </span>
+             Embed
+          </button>
+          <!--End of Button for Convert-->
+
+
+          <!--Button for SaveAs-->
+          <button class="button is-info mt-2" id="saveAs">
+            <i class="fas fa-floppy-disk is-size-5 fa-flip"></i>
+             Save
+          </button>
+          <!--End of Button for SaveAs-->
+
+          <!--Button for reset-->
+          <button class="button is-danger mt-2" id="resetbtn">
+            <span class="file-icon">
+              <i class="fa-solid fa-trash-can is-size-5"></i>
+            </span>
+             Reset
+          </button>
+          <!--End of Button for Reset-->
+
+        </div>
+        <!--End of Text Area-->
+
+
+      </div> <!-- End for Container for embed to display after upload-->
+
+      <footer class="footer mt-4 is-fullheight is-fullwidth">
+        <div class="content has-text-centered">
+          <p>
+            <strong><a href="https://jamespaulespena.netlify.app/" target="_blank"><i
+                  class="fas fa-rectangle-terminal is-size-1" title="Visit My Portfolio."></i></a></strong>
+            <strong><i class="fa-solid fa-user-secret is-size-1 fa-beat-fade"
+                style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.095;" title="View Developer Information."
+                onclick="devinfo();"></i></strong>
+            <strong><a href="https://github.com/rockstartraders" target="_blank"><i
+                  class="fa-brands fa-github is-size-1" title="Visit My GITHUB Page."></i></a></strong>
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!--End of First Tab-->
+
+
+
+
+    <!--Start of Second Tab-->
+
+
+    <div id="Decode" class="content-tab" style="display:none">
+      <!-- DIV for Decode -->
+      <p class="is-size-6" id="txt_instruction">The <strong><span class="has-text-danger">DECODE</span></strong> function will only work for Images embed using this application. </p>
+      <!-- <p class="is-size-6 mt-1" id="txt_instruction">Step 1. Upload the Image you wish to decipher.</p> -->
+      <div id="file-decode_upload" class="file has-name is-info mt-1">
+        <!-- Upload button for Second TAB-->
+        <label class="file-label">
+          <input class="file-input" type="file" name="pic" accept="image/*" onchange="decode(this);"
+            id="file-input-decode" />
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload is-size-5 fa-bounce"></i>
+            </span>
+            <span class="file-label" id="file-label-decode">
+               Upload Image
+            </span>
+          </span>
+        </label>
+        <button class="button is-primary ml-1" id="decode_btn">
+          <i class="fas fa-unlock is-size-5 fa-fade"></i>
+            Decode</button>
+      </div> <!-- End of Upload button for Second TAB-->
+
+
+
+      <div class="mt-5">
+        <!--This is the container for both images-->
+        <div class="row pb-6">
+          <div class="column">
+            <p id="imgtxt_decode">Decoded Image</p>  <!--Remove the text since animation is blocking it -->
+            <img class="mt-4" src="https://bulma.io/images/placeholders/256x256.png" style="width:100%;" id="img_3">
+          </div>
+        </div>
+      </div>
+
+      <!-- <h1 class="mt-5" >Decoded Text:</h1> -->
+
+      <!-- Footer for Decode section / Tab -->   
+      <footer class="footer mt-6 is-fullheight fter_decode">
+        <div class="content has-text-centered">
+          <p>
+            <strong><a href="https://jamespaulespena.netlify.app/" target="_blank"><i
+                  class="fas fa-rectangle-terminal is-size-1" title="Visit My Portfolio."></i></a></strong>
+            <strong><i class="fa-solid fa-user-secret is-size-1 fa-beat-fade"
+                style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.095;" title="View Developer Information"
+                onclick="devinfo();"></i></strong>
+            <strong><a href="https://github.com/rockstartraders" target="_blank"><i
+                  class="fa-brands fa-github is-size-1" title="Visit My GITHUB Page"></i></a></strong>
+          </p>
+        </div>
+      </footer>
+
+      <!-- End of Footer for Decode section / Tab -->
+
+
+    </div> <!-- END of DIV for Decode -->
+    <!--End of Second Tab-->
+  </div>
+  <!--End of main DIV -->
+
+
+
+  <script src="/JS/axios.min.js"></script>
+  <script src="/JS/bulmatab.js"></script>
+  <script src="/JS/sweetalert2.min.js"></script>
+  <script src="/js/FileSaver.js"></script>
+  <script src="/JS/anime.min.js"></script>
+  <script src="/JS/main.js"></script>
+
+
+</body>
+</html>

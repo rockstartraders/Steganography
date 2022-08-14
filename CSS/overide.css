@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+#linebreak_resize{
+    display: none;
+}
+
+.tab{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+/* tab and Icon color change when click */
+.tabs li.is-active a {
+ 
+    color: #3a3a3a;
+   
+}
+
+.tabs a {
+ 
+    color: #4B5D67;  
+}
+
+
+.tabs li.is-active .fas, .tabs li.is-active .fa-brands{
+
+    
+    color: #FF5733;
+    /* color: #da5a53; */
+    font-size: 1.5em;
+    
+} /* End of tab and Icon color change when click */
+
+
+/* Upload button  */
+.file-label, .file-name, .button{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;    
+    font-weight: 400;
+
+   
+} 
+/* end Upload button  */
+
+
+/* text Instruction  */
+
+#txt_instruction{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;    
+    font-weight: 600;
+}
+
+/* End of Text Instruction  */
+
+
+/* Result image and text not to display after upload and onload */
+
+#imgtxt_result, #img_2, #img_3, #imgtxt_decode, #decode_btn{
+  display: none;
+}
+
+
+#img_3{
+    height: 500px;
+    width: 400px;
+}
+
+
+/* CSS for Sweetalert 2  */
+
+#swal_confirm{
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;   
+}
+
+#swal_title{
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;   
+}
+
+.swal2-icon.swal2-question, .swal2-icon.swal2-info  {
+    border-color: #FF5733;
+    color: #FF5733;
+}
+
+
+
+.swal2-icon.swal2-success, .swal2-icon.swal2-success .swal2-success-ring {
+    border-color: #48c78e;
+    color: #48c78e;
+}
+
+/* End of CSS for Sweetalert 2  */
+
+
+
+
+
+
+/* text Area */
+
+.textarea{
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+  
+     
+}/* text Area */
+
+/* SaveAs Button */
+
+#saveAs{
+    display: none;
+} /* End of SaveAs Button */
+
+
+/* main div for embed / will be hidden first  */
+
+ #container_for_embed{
+    visibility: hidden; 
+} 
+
+/* end of main div for embed / will be hidden first  */
+
+
+/* this is the css for DIV Images and text inside */
+
+
+.column{
+    float: left;
+    width: 50% auto;
+    padding: 5px;
+    
+}
+
+
+.row::after{
+    content: "";
+    display: table;
+    
+
+}
+
+img{
+    border-radius: 6px;
+
+    /* shadow effect  */
+    -webkit-box-shadow: 0 35px 20px #777;
+    -moz-box-shadow: 0 35px 20px #777;
+    box-shadow: 0 35px 20px #777;
+    /* -webkit-transform: rotate(-8deg);   remove the Tilt Effect
+    -moz-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    transform: rotate(0deg); */
+}
+
+#imgtxt, #imgtxt_result, #imgtxt_decode{
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* End of css for Images and text inside */
+
+
+
+/* Sweet alert for Success message  */
+
+#swal_title_success{
+
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+
+}
+
+
+#swal_title_success_message{
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}
+/* End of Sweet alert for Success message  */
+
+
+
+/* Footer section / CSS */
+
+.fa-user-secret{      
+    /* position: fixed; */
+    z-index: 19999;
+}
+
+
+.fter_decode{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;       
+    background-color: #fafafa;   
+ }
+
+
+a{
+    color: #4B5D67;
+}
+
+
+
+/* To minimize height of footer for both tab  */
+.footer {    
+    
+    padding: 1.5rem 6rem;
+    padding-top: 1.5rem;
+    padding-right: 6rem;
+    padding-bottom: 1rem;
+    padding-left: 6rem;
+}
+
+/* End of Footer section / CSS */
+
+/* This is teh section for column in charged for spacing */
+
+.section {
+    padding: 3rem 1.5rem;
+    padding-top: 3rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+
+/* Sweet alert for Dev Info  */
+
+#rockstartraders{
+    color:#f14668;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #img_3{
+        height: auto;
+        width: auto;
+        
+    }
+
+    #img_2, .imgwithcodetxt{
+       
+        margin-left: -20px;
+       
+    }
+
+    #linebreak_resize{
+        display: block;
+    }
+    
+  
+  }
