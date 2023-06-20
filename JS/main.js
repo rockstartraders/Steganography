@@ -75,7 +75,7 @@ document.getElementById('freeimage').addEventListener("click", async function(){
      
     document.getElementById('freeimage').classList.add('is-loading');   // loading indiator.     
     await axios({
-    url: 'https://source.unsplash.com/random/300x400', //your url
+    url: 'https://picsum.photos/200/300?random=1', //your url
     method: 'GET',
     responseType: 'blob', // important
     }).then((response) => {
